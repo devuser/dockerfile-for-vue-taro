@@ -21,18 +21,18 @@ RUN eval "echo \"export TZ='Asia/Shanghai'\" >> /root/.profile" &&  \
   echo "Permit to access the special folder"  &&  \
   mkdir -p /usr/local/lib/node_modules  &&  \
   chmod -R 777  /usr/local/lib/node_modules
-  #   &&  \
-  # touch /dockerdata/ex_hosts  &&  \
-  # echo "47.92.84.245\tboyosoft.net" >> /dockerdata/ex_hosts &&  \
-  # echo "47.92.84.245\tboyosoft" >> /dockerdata/ex_hosts &&  \
-  # echo "47.92.84.245\twww.boyosoft.net" >> /dockerdata/ex_hosts &&  \
-  # echo "cat /dockerdata/ex_hosts >> /etc/hosts" >> /dockerdata/update_hosts &&  \
-  # echo "/etc/init.d/netfs restart" >> /dockerdata/update_hosts    &&  \
-  # chmod 700 /dockerdata/update_hosts  &&  \
 
-  # mkdir -p /var/root  &&  \
-  # chmod -R 777 /var/root  &&  \
-  # rm -rf /dockerdata/ex_hosts
+# 如下代码不适用于提交GitHub
+RUN touch /dockerdata/ex_hosts  &&  \
+  echo "47.92.84.245\tboyosoft.net" >> /dockerdata/ex_hosts &&  \
+  echo "47.92.84.245\tboyosoft" >> /dockerdata/ex_hosts &&  \
+  echo "47.92.84.245\twww.boyosoft.net" >> /dockerdata/ex_hosts &&  \
+  echo "cat /dockerdata/ex_hosts >> /etc/hosts" >> /dockerdata/update_hosts &&  \
+  echo "/etc/init.d/netfs restart" >> /dockerdata/update_hosts    &&  \
+  chmod 700 /dockerdata/update_hosts  &&  \
+  mkdir -p /var/root  &&  \
+  chmod -R 777 /var/root  &&  \
+  rm -rf /dockerdata/ex_hosts
 
 RUN  apt-get -y update  \
   &&  apt-get -y install git curl \
@@ -40,17 +40,18 @@ RUN  apt-get -y update  \
   &&  chmod 700 /root/.ssh
 
 
-# COPY authorized_keys /root/.ssh/authorized_keys
-# COPY id_rsa_github /root/.ssh/id_rsa_github
-#
-# COPY config /root/.ssh/config
-# COPY known_hosts /root/.ssh/known_hosts
-# RUN cd /root/.ssh   &&  \
-#   chmod 400 *    &&  \
-#   cd ..   &&  \
-#   chmod 700 .ssh  &&  \
-#   git config --global user.name "devuser" &&  \
-#   git config --global user.email "pythoner@icloud.com"
+# 如下代码不适用于提交GitHub
+COPY authorized_keys /root/.ssh/authorized_keys
+COPY id_rsa_github /root/.ssh/id_rsa_github
+
+COPY config /root/.ssh/config
+COPY known_hosts /root/.ssh/known_hosts
+RUN cd /root/.ssh   &&  \
+  chmod 400 *    &&  \
+  cd ..   &&  \
+  chmod 700 .ssh  &&  \
+  git config --global user.name "devuser" &&  \
+  git config --global user.email "pythoner@icloud.com"
 
 # # 设成淘宝的
 # npm config set registry http://registry.npm.taobao.org/

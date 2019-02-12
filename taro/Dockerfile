@@ -1,4 +1,4 @@
-FROM node/vuetaro
+FROM xiehuanang/vue
 MAINTAINER devuser "pythoner@icloud.com"
 RUN npm install -g eslint@^4.15.0  \
   &&  npm install -g yarn vue@^2.6.4 react@^16.8.1 webpack@^4.29.3 webpack-cli  \
