@@ -39,6 +39,7 @@ RUN  apt-get -y update  \
   &&  mkdir -p /root/.ssh \
   &&  chmod 700 /root/.ssh
 
+
 # COPY authorized_keys /root/.ssh/authorized_keys
 # COPY id_rsa_github /root/.ssh/id_rsa_github
 #
@@ -50,6 +51,11 @@ RUN  apt-get -y update  \
 #   chmod 700 .ssh  &&  \
 #   git config --global user.name "devuser" &&  \
 #   git config --global user.email "pythoner@icloud.com"
+
+# # 设成淘宝的
+# npm config set registry http://registry.npm.taobao.org/
+
+# yarn config set registry http://registry.npm.taobao.org/
 
 RUN npm i npm@latest -g \
   &&  npm install -g npm  \
