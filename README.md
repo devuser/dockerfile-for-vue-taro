@@ -4,7 +4,11 @@ Dockerfile for Vue developer or Taro developer
 
 适用于在Docker环境下工作的前端工程师，增加 `Vue` & `Taro`的内容。
 
-使用Docker环境开发，方便工程师维护比较干净的开发环境，或个版本的开发环境。
+使用Docker环境开发的优势
+
+1. 维护比较干净的开发环境
+2. 维护多个版本的开发环境
+3. 构建开发环境过程中需要翻墙，如果使用Docker环境开发的话，可以一人翻墙多人受益
 
 本项目包括两个`Dockerfile`，
 
