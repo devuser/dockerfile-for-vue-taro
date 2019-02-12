@@ -33,17 +33,17 @@ Dockerfile for Vue developer or Taro developer
 占有固定端口
 
 ```shell
-alias vuezero="docker run -m 1024m --rm -it -v $HOME/working:/usr/src/myapp -w /usr/src/myapp/bocpts-react-antd --link some-redis --link some-mysql:mysql -p 48080:8080 node/vuetaro /bin/bash"
+alias vuezero="docker run -m 1024m --rm -it -v $HOME/working:/usr/src/myapp -w /usr/src/myapp --link some-redis --link some-mysql:mysql -p 48080:8080 node/vuetaro /bin/bash"
 ```
 
 不占用端口
 
 ```shell
-alias alphazero="docker run -m 2048m --rm -it -v $HOME/working:/usr/src/myapp -w /usr/src/myapp/tencentyun/gangxiaoer-mpvue-v3-unstable --link some-redis --link some-mysql:mysql node/vuetaro /bin/bash"
+alias alphazero="docker run -m 2048m --rm -it -v $HOME/working:/usr/src/myapp -w /usr/src/myapp --link some-redis --link some-mysql:mysql node/vuetaro /bin/bash"
 ```
 
 Hexo环境
 
 ```shell
-alias hexozero="docker run -m 1024m --rm -it -v $HOME/working:/usr/src/myapp -w /usr/src/myapp/pts-notes-hexo --link some-redis --link some-mysql:mysql -p 44000:4000 node/vuetaro /bin/bash"
+alias hexozero="docker run -m 1024m --rm -it -v $HOME/working:/usr/src/myapp -w /usr/src/myapp --link some-redis --link some-mysql:mysql -p 44000:4000 node/vuetaro /bin/bash"
 ```
