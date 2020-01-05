@@ -1,5 +1,5 @@
-FROM xiehuanang/vue
-MAINTAINER devuser "pythoner@icloud.com"
+FROM yourself/vue
+MAINTAINER yourself "yourself@icloud.com"
 # RUN npm install -g eslint@^4.15.0  \
   # &&  npm install -g yarn vue@^2.6.2 react@^16.8.1 webpack@^4.29.3 webpack-cli  \
   # &&  npm install -g typescript@^3.3.3  \

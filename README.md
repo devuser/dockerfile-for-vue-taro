@@ -15,7 +15,29 @@ Dockerfile for Vue developer or Taro developer
 - 根目录下是全量版本，即从`node`基础版本开始构建
 - `taro`目录下的增量版本，即从全量版本开始，构建升级新版本的`Taro`
 
-首次使用，在根目录下执行`./build.sh`构建全量版本即可。 日后使用可以在 `taro`目录下执行`./build.sh`构建增量版本。
+## 构建镜像
+
+构建镜像的命令
+
+```shell
+docker build --no-cache -t yourself/vue .
+```
+
+鼓励在当前目录下创建一个shell脚本，比如`build.sh`。
+
+执行`./build.sh`构建全量版本即可。
+
+日后使用可以在 `taro`目录下执行`./build.sh`构建增量版本。
+
+注意事项：构建镜像时，可能因为缺少文件`config` `known_hosts`报错，
+打开Dockerfile注释对应的语句，然后重新执行构建命令即可。
+
+如果您同样这两个文件，手工创建两个空文件即可。
+
+```shell
+touch config
+touch known_hosts
+```
 
 ## Usage
 
