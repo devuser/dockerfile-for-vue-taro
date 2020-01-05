@@ -29,13 +29,14 @@ docker build --no-cache -t yourself/vue .
 
 日后使用可以在 `taro`目录下执行`./build.sh`构建增量版本。
 
-注意事项：构建镜像时，可能因为缺少文件`config` `known_hosts`报错，
+注意事项：构建镜像时，可能因为缺少文件`config` `known_hosts` `authorized_keys`报错，
 打开Dockerfile注释对应的语句，然后重新执行构建命令即可。
 
-如果您同样这两个文件，手工创建两个空文件即可。
+如果您也需要上述文件，手工创建两个空文件即可。
 
 ```shell
 touch config
+touch authorized_keys
 touch known_hosts
 ```
 
