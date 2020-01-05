@@ -5,7 +5,7 @@ cd $HOME
 # tar zcvf $CURRENTFOLDER/dot-oh-my-zsh.tar.gz .oh-my-zsh
 cd $CURRENTFOLDER
 # cp $HOME/.zshrc dot-zshrc
-docker build --no-cache -t xiehuanang/vue:taro .
+docker build --no-cache -t yourself/vue:taro .
 echo "Remove the middle-files"
 # rm -rf $CURRENTFOLDER/dot-oh-my-zsh.tar.gz
 # rm -rf dot-zshrc
